@@ -15,13 +15,27 @@ builder.Services.AddOutputCache( opciones =>
         opciones.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(30); // el cache durará 15 segundos
     });
 
-builder.Services.AddSingleton<IRepositorio, RepositorioPrueba>();
+//builder.Services.AddSingleton<IRepositorio, RepositorioPrueba>();
 
-builder.Services.AddTransient<ServicioTransient>();  //Tiempo de vida del servicio
+//builder.Services.AddTransient<ServicioTransient>();  //Tiempo de vida del servicio
 
-builder.Services.AddScoped<ServicioScoped>();  //Tiempo de vida del servicio
+//builder.Services.AddScoped<ServicioScoped>();  //Tiempo de vida del servicio
 
-builder.Services.AddSingleton<ServicioSingleton>();  //Tiempo de vida del servicio
+//builder.Services.AddSingleton<ServicioSingleton>();  //Tiempo de vida del servicio
+
+var allowedhost = builder.Configuration.GetValue<string>("accesoHost")!.Split(",");
+
+
+builder.Services.AddCors(opciones =>
+{
+    opciones.AddDefaultPolicy(corsOptions =>
+    {
+        //Permitir que cualquir lugar nos pueda comunicar, cualquir metodo HTTP se puede usar y cualquier cabecera por HTTP
+        //corsOptions.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        corsOptions.WithOrigins(allowedhost).AllowAnyMethod().AllowAnyHeader();
+    });
+});
+
 
 
 var app = builder.Build();
@@ -33,6 +47,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger(); //Uso de Swagger
     app.UseSwaggerUI(); //Uso interfaz de swagger
 }
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 

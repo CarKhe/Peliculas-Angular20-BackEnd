@@ -9,7 +9,7 @@ namespace PeliculasAPI.Controllers
     [ApiController] //Especificar que es API controller
     [Route("api/[controller]")] //Ruta que tendra mi Controlador el uso del [controller] es para especificar el tipo sin
     //el controller de la clase
-    public class GenerosController: ControllerBase
+    public class GenerosPlayGroundController: ControllerBase
     {
         private readonly IRepositorio repositorio;
         private readonly ServicioTransient transient;
@@ -19,9 +19,9 @@ namespace PeliculasAPI.Controllers
         private readonly ServicioSingleton singleton;
         private readonly IOutputCacheStore outputCacheStore;
         private readonly IConfiguration configuration; //Configuracion sacada del appsettings.json
-        private const string cacheTag = "generos";
+        private const string cacheTag = "generosPlayGround";
 
-        public GenerosController(IRepositorio repositorio,
+        public GenerosPlayGroundController(IRepositorio repositorio,
             ServicioTransient transient,
             ServicioTransient transient2,
             ServicioScoped scoped,
@@ -108,7 +108,7 @@ namespace PeliculasAPI.Controllers
             return Ok();
         }
 
-        [HttpPut]
+        [HttpPut] 
         public void Put() 
         {
             

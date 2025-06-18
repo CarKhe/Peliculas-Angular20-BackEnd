@@ -5,10 +5,137 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Generos/Obtener-comfig": {
+    "/api/Genero": {
       "get": {
         "tags": [
-          "Generos"
+          "Genero"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Genero"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Genero"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Genero"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Genero"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Genero"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Genero"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Genero"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Genero"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Genero"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Genero/{id}": {
+      "get": {
+        "tags": [
+          "Genero"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Genero"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Genero"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Genero"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/GenerosPlayGround/Obtener-comfig": {
+      "get": {
+        "tags": [
+          "GenerosPlayGround"
         ],
         "responses": {
           "200": {
@@ -34,10 +161,10 @@
         }
       }
     },
-    "/api/Generos/TiemposVida": {
+    "/api/GenerosPlayGround/TiemposVida": {
       "get": {
         "tags": [
-          "Generos"
+          "GenerosPlayGround"
         ],
         "responses": {
           "200": {
@@ -46,10 +173,10 @@
         }
       }
     },
-    "/api/Generos/Listado": {
+    "/api/GenerosPlayGround/Listado": {
       "get": {
         "tags": [
-          "Generos"
+          "GenerosPlayGround"
         ],
         "responses": {
           "200": {
@@ -87,7 +214,7 @@
     "/Listado-generos": {
       "get": {
         "tags": [
-          "Generos"
+          "GenerosPlayGround"
         ],
         "responses": {
           "200": {
@@ -122,10 +249,10 @@
         }
       }
     },
-    "/api/Generos": {
+    "/api/GenerosPlayGround": {
       "get": {
         "tags": [
-          "Generos"
+          "GenerosPlayGround"
         ],
         "responses": {
           "200": {
@@ -161,7 +288,7 @@
       },
       "post": {
         "tags": [
-          "Generos"
+          "GenerosPlayGround"
         ],
         "requestBody": {
           "content": {
@@ -190,7 +317,7 @@
       },
       "put": {
         "tags": [
-          "Generos"
+          "GenerosPlayGround"
         ],
         "responses": {
           "200": {
@@ -200,7 +327,7 @@
       },
       "delete": {
         "tags": [
-          "Generos"
+          "GenerosPlayGround"
         ],
         "responses": {
           "200": {
@@ -209,10 +336,10 @@
         }
       }
     },
-    "/api/Generos/{id}/{nombre}": {
+    "/api/GenerosPlayGround/{id}/{nombre}": {
       "get": {
         "tags": [
-          "Generos"
+          "GenerosPlayGround"
         ],
         "parameters": [
           {
@@ -258,10 +385,10 @@
         }
       }
     },
-    "/api/Generos/{id}": {
+    "/api/GenerosPlayGround/{id}": {
       "get": {
         "tags": [
-          "Generos"
+          "GenerosPlayGround"
         ],
         "parameters": [
           {

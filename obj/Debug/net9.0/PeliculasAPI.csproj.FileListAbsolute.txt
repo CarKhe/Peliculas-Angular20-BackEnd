@@ -71,3 +71,4 @@ C:\Users\Carlos\Desktop\Angular-AspnetCore\PeliculasAPI\obj\Debug\net9.0\refint\
 C:\Users\Carlos\Desktop\Angular-AspnetCore\PeliculasAPI\obj\Debug\net9.0\PeliculasAPI.pdb
 C:\Users\Carlos\Desktop\Angular-AspnetCore\PeliculasAPI\obj\Debug\net9.0\PeliculasAPI.genruntimeconfig.cache
 C:\Users\Carlos\Desktop\Angular-AspnetCore\PeliculasAPI\obj\Debug\net9.0\ref\PeliculasAPI.dll
+C:\Users\Carlos\Desktop\Angular-AspnetCore\PeliculasAPI\obj\Debug\net9.0\PeliculasAPI.sourcelink.json

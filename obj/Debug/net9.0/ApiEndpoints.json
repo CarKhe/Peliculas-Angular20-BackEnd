@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "PeliculasAPI.Controllers.GenerosController",
+    "ContainingType": "PeliculasAPI.Controllers.GeneroController",
     "Method": "Get",
-    "RelativePath": "api/Generos",
+    "RelativePath": "api/Genero",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -20,9 +20,9 @@
     ]
   },
   {
-    "ContainingType": "PeliculasAPI.Controllers.GenerosController",
+    "ContainingType": "PeliculasAPI.Controllers.GeneroController",
     "Method": "Post",
-    "RelativePath": "api/Generos",
+    "RelativePath": "api/Genero",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -36,9 +36,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PeliculasAPI.Controllers.GenerosController",
+    "ContainingType": "PeliculasAPI.Controllers.GeneroController",
     "Method": "Put",
-    "RelativePath": "api/Generos",
+    "RelativePath": "api/Genero",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -52,9 +52,9 @@
     ]
   },
   {
-    "ContainingType": "PeliculasAPI.Controllers.GenerosController",
+    "ContainingType": "PeliculasAPI.Controllers.GeneroController",
     "Method": "Delete",
-    "RelativePath": "api/Generos",
+    "RelativePath": "api/Genero",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -68,9 +68,9 @@
     ]
   },
   {
-    "ContainingType": "PeliculasAPI.Controllers.GenerosController",
-    "Method": "GetOne404",
-    "RelativePath": "api/Generos/{id}",
+    "ContainingType": "PeliculasAPI.Controllers.GeneroController",
+    "Method": "Get",
+    "RelativePath": "api/Genero/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -94,9 +94,103 @@
     ]
   },
   {
-    "ContainingType": "PeliculasAPI.Controllers.GenerosController",
+    "ContainingType": "PeliculasAPI.Controllers.GenerosPlayGroundController",
+    "Method": "Get",
+    "RelativePath": "api/GenerosPlayGround",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[PeliculasAPI.Entidades.Genero, PeliculasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PeliculasAPI.Controllers.GenerosPlayGroundController",
+    "Method": "Post",
+    "RelativePath": "api/GenerosPlayGround",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "genero",
+        "Type": "PeliculasAPI.Entidades.Genero",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PeliculasAPI.Controllers.GenerosPlayGroundController",
+    "Method": "Put",
+    "RelativePath": "api/GenerosPlayGround",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PeliculasAPI.Controllers.GenerosPlayGroundController",
+    "Method": "Delete",
+    "RelativePath": "api/GenerosPlayGround",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PeliculasAPI.Controllers.GenerosPlayGroundController",
+    "Method": "GetOne404",
+    "RelativePath": "api/GenerosPlayGround/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PeliculasAPI.Entidades.Genero",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PeliculasAPI.Controllers.GenerosPlayGroundController",
     "Method": "GetOne",
-    "RelativePath": "api/Generos/{id}/{nombre}",
+    "RelativePath": "api/GenerosPlayGround/{id}/{nombre}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -125,9 +219,9 @@
     ]
   },
   {
-    "ContainingType": "PeliculasAPI.Controllers.GenerosController",
+    "ContainingType": "PeliculasAPI.Controllers.GenerosPlayGroundController",
     "Method": "Get",
-    "RelativePath": "api/Generos/Listado",
+    "RelativePath": "api/GenerosPlayGround/Listado",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -145,9 +239,9 @@
     ]
   },
   {
-    "ContainingType": "PeliculasAPI.Controllers.GenerosController",
+    "ContainingType": "PeliculasAPI.Controllers.GenerosPlayGroundController",
     "Method": "Get_config",
-    "RelativePath": "api/Generos/Obtener-comfig",
+    "RelativePath": "api/GenerosPlayGround/Obtener-comfig",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -165,9 +259,9 @@
     ]
   },
   {
-    "ContainingType": "PeliculasAPI.Controllers.GenerosController",
+    "ContainingType": "PeliculasAPI.Controllers.GenerosPlayGroundController",
     "Method": "GetTiempoVida",
-    "RelativePath": "api/Generos/TiemposVida",
+    "RelativePath": "api/GenerosPlayGround/TiemposVida",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -175,7 +269,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PeliculasAPI.Controllers.GenerosController",
+    "ContainingType": "PeliculasAPI.Controllers.GenerosPlayGroundController",
     "Method": "Get",
     "RelativePath": "Listado-generos",
     "HttpMethod": "GET",
