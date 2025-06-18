@@ -10,7 +10,7 @@ namespace PeliculasAPI.Entidades
         
         [Required(ErrorMessage ="El Campo {0} es Requerido")] //Validacion de ASP NET CORE
         //{0} pone la primera variable que encuentre
-        [StringLength(10,ErrorMessage ="El {0} no debe ser mayor a {1}")]//{1} atributo del String Length
+        [StringLength(50,ErrorMessage ="El {0} no debe ser mayor a {1}")]//{1} atributo del String Length
         [CapitalAttribute]
         public required string Nombre { get; set; }
 

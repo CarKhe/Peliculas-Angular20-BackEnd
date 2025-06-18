@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using PeliculasAPI;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,9 @@ builder.Services.AddControllers();
 //builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer(); //Se agrega el end pont de la API
 builder.Services.AddSwaggerGen(); //se especifica que se usara swagger
+
+builder.Services.AddDbContext<ApplicationDbContext>(opciones => 
+opciones.UseSqlServer("name=DefaultConnection"));
 
 builder.Services.AddOutputCache( opciones =>
     {
