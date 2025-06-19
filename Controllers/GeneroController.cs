@@ -40,6 +40,8 @@ namespace PeliculasAPI.Controllers
             //var generosDTO = _mapper.Map<List<GeneroDTO>>(generos); 
 
             //return generosDTO;
+
+            //Mas eficiente al realizar consultas que no necesita
             return await _context.Generos.ProjectTo<GeneroDTO>(_mapper.ConfigurationProvider).ToListAsync();
 
         }
