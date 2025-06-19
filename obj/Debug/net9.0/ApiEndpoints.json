@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[PeliculasAPI.Entidades.Genero, PeliculasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[PeliculasAPI.DTO_s.GeneroDTO, PeliculasAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -28,8 +28,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "genero",
-        "Type": "PeliculasAPI.Entidades.Genero",
+        "Name": "generoCreacionDTO",
+        "Type": "PeliculasAPI.DTO_s.GeneroCreacionDTO",
         "IsRequired": true
       }
     ],
@@ -83,7 +83,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "PeliculasAPI.Entidades.Genero",
+        "Type": "PeliculasAPI.DTO_s.GeneroDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -91,7 +91,8 @@
         ],
         "StatusCode": 200
       }
-    ]
+    ],
+    "EndpointName": "ObtenerGeneroId"
   },
   {
     "ContainingType": "PeliculasAPI.Controllers.GenerosPlayGroundController",

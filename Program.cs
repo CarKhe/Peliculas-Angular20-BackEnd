@@ -11,8 +11,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer(); //Se agrega el end pont de la API
 builder.Services.AddSwaggerGen(); //se especifica que se usara swagger
 
+builder.Services.AddAutoMapper(typeof(Program));
+
 builder.Services.AddDbContext<ApplicationDbContext>(opciones => 
-opciones.UseSqlServer("name=DefaultConnection"));
+opciones.UseSqlServer("name=DefaultConnectionOficina"));
 
 builder.Services.AddOutputCache( opciones =>
     {
