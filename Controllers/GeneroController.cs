@@ -56,7 +56,11 @@ namespace PeliculasAPI.Controllers
         [OutputCache(Tags = [_cacheTag])]
         public async Task<ActionResult<GeneroDTO>> Get(int id) 
         {
-            throw new NotImplementedException();
+            var genero = await _context.Generos
+                .ProjectTo<GeneroDTO>(_mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(g => g.Id == id);
+            if (genero is null) return NotFound();
+            return genero;
         }
 
         [HttpPost]
@@ -67,19 +71,30 @@ namespace PeliculasAPI.Controllers
             var genero = _mapper.Map<Genero>(generoCreacionDTO);
             _context.Add(genero);//Guardar el genero en memoria
             await _context.SaveChangesAsync(); //Inserat como registro en la tabla de generos
+            await _outputCacheStore.EvictByTagAsync(_cacheTag, default);
             return CreatedAtRoute("ObtenerGeneroId",new {id = genero.Id},genero); //mostrar con que ID fue registrado
         }
 
-        [HttpPut]
-        public void Put()
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> Put(int id, [FromBody] GeneroCreacionDTO generoCreacionDTO)
         {
-            throw new NotImplementedException();
+            var existe = await _context.Generos.AnyAsync(g => g.Id == id);
+            if (!existe) return NotFound();
+            var genero = _mapper.Map<Genero>(generoCreacionDTO);
+            genero.Id = id;
+            _context.Update(genero);
+            await _context.SaveChangesAsync();
+            await _outputCacheStore.EvictByTagAsync(_cacheTag,default);
+            return NoContent();
         }
 
-        [HttpDelete]
-        public void Delete()
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            throw new NotImplementedException();
+            var registrosBorrados = await _context.Generos.Where(g => g.Id == id).ExecuteDeleteAsync();
+            if (registrosBorrados == 0) return NotFound();
+            await _outputCacheStore.EvictByTagAsync(_cacheTag, default);
+            return NoContent();
         }
 
     }
