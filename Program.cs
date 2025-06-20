@@ -38,7 +38,8 @@ builder.Services.AddCors(opciones =>
     {
         //Permitir que cualquir lugar nos pueda comunicar, cualquir metodo HTTP se puede usar y cualquier cabecera por HTTP
         //corsOptions.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-        corsOptions.WithOrigins(allowedhost).AllowAnyMethod().AllowAnyHeader();
+        corsOptions.WithOrigins(allowedhost).AllowAnyMethod().AllowAnyHeader()
+        .WithExposedHeaders("Cant-Registros");
     });
 });
 
